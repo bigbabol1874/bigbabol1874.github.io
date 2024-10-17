@@ -13,7 +13,6 @@
             padding: 20px;
         }
         .tool-item {
-            background-color: #f0f0f0;
             border-radius: 10px;
             padding: 20px;
             text-align: center;
@@ -29,7 +28,6 @@
         .tool-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            background-color: #e0e0e0;
         }
         .tool-item h2 {
             margin-top: 0;
@@ -64,7 +62,7 @@
                     <li><a href="index.html">首页</a></li>
                     <li><a href="tools.html" class="active">工具</a></li>
                     <li><a href="games.html" class="game-button">游戏</a></li>
-                    <li><a href="#album">相册</a></li>
+                    <li><a href="moyu.html">摸鱼</a></li>
                     <li><a href="#about">关于</a></li>
                 </ul>
             </nav>
@@ -117,6 +115,17 @@
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('search-input');
             const toolItems = document.querySelectorAll('.tool-item');
+
+            // 生成随机颜色的函数
+            function getRandomColor() {
+                const hue = Math.floor(Math.random() * 360);
+                return `hsl(${hue}, 70%, 80%)`;
+            }
+
+            // 为每个工具项分配随机背景颜色
+            toolItems.forEach(item => {
+                item.style.backgroundColor = getRandomColor();
+            });
 
             searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();

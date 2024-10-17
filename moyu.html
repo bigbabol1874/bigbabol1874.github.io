@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bigbabol的游戏世界</title>
+    <title>摸鱼 - Bigbabol的个人博客</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .game-button {
-            color: black !important;
-        }
-        .games-grid {
+        .moyu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
         }
-        .game-item {
+        .moyu-item {
             border-radius: 10px;
             padding: 20px;
+            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             text-decoration: none;
@@ -26,23 +24,22 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
         }
-        .game-item:hover {
+        .moyu-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .game-info {
-            text-align: center;
-        }
-        .game-item h2 {
+        .moyu-item h2 {
             margin-top: 0;
             color: #333;
             margin-bottom: 10px;
         }
-        .game-item p {
+        .moyu-item p {
             color: #666;
             margin-bottom: 0;
+        }
+        .game-button {
+            color: black !important;
         }
         .search-container {
             text-align: center;
@@ -64,36 +61,37 @@
                 <ul>
                     <li><a href="index.html">首页</a></li>
                     <li><a href="tools.html">工具</a></li>
-                    <li><a href="games.html" class="active game-button">游戏</a></li>
-                    <li><a href="moyu.html">摸鱼</a></li>
+                    <li><a href="games.html" class="game-button">游戏</a></li>
+                    <li><a href="moyu.html" class="active">摸鱼</a></li>
                     <li><a href="#about">关于</a></li>
                 </ul>
             </nav>
         </header>
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="搜索游戏...">
+            <input type="text" id="search-input" placeholder="搜索摸鱼内容...">
         </div>
         <main>
-            <h1>游戏列表</h1>
-            <div class="games-grid">
-                <a href="https://steamzg.com/" target="_blank" class="game-item">
-                    <div class="game-info">
-                        <h2>小叽资源</h2>
-                        <p>各种免费单机游戏</p>
-                    </div>
+            <h1>摸鱼专区</h1>
+            <div class="moyu-grid">
+                <a href="https://www.yikm.net/" target="_blank" class="moyu-item">
+                    <h2>小霸王</h2>
+                    <p>愿我们找回童年的快乐</p>
                 </a>
-                <!-- 可以添加更多游戏 -->
+                <a href="https://fish.leixf.cn/" target="_blank" class="moyu-item">
+                    <h2>电子木鱼</h2>
+                    <p>敲电子木鱼,积赛博功德。</p>
+                </a>
+                <!-- 可以添加更多摸鱼项目 -->
             </div>
         </main>
         <footer>
             <p>Bigbabol的个人博客</p>
         </footer>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('search-input');
-            const gameItems = document.querySelectorAll('.game-item');
+            const moyuItems = document.querySelectorAll('.moyu-item');
 
             // 生成随机颜色的函数
             function getRandomColor() {
@@ -101,17 +99,17 @@
                 return `hsl(${hue}, 70%, 80%)`;
             }
 
-            // 为每个游戏项分配随机背景颜色
-            gameItems.forEach(item => {
+            // 为每个摸鱼项分配随机背景颜色
+            moyuItems.forEach(item => {
                 item.style.backgroundColor = getRandomColor();
             });
 
             searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();
-                gameItems.forEach(item => {
-                    const gameName = item.querySelector('h2').textContent.toLowerCase();
-                    const gameDescription = item.querySelector('p').textContent.toLowerCase();
-                    if (gameName.includes(searchTerm) || gameDescription.includes(searchTerm)) {
+                moyuItems.forEach(item => {
+                    const moyuName = item.querySelector('h2').textContent.toLowerCase();
+                    const moyuDescription = item.querySelector('p').textContent.toLowerCase();
+                    if (moyuName.includes(searchTerm) || moyuDescription.includes(searchTerm)) {
                         item.style.display = '';
                     } else {
                         item.style.display = 'none';
