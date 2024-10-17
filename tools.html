@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常用工具 - Bigbabol的个人博客</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .tool-item {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .tool-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .tool-item h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .tool-item p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .tool-item a {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .tool-item a:hover {
+            background-color: #2980b9;
+        }
+        .game-button {
+            color: black !important;
+        }
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #search-input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="tools.html" class="active">工具</a></li>
+                    <li><a href="games.html" class="game-button">游戏</a></li>
+                    <li><a href="#album">相册</a></li>
+                    <li><a href="#about">关于</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="搜索工具...">
+        </div>
+        <main>
+            <h1>常用工具</h1>
+            <div class="tools-grid">
+                <div class="tool-item" onclick="location.href='#todo-list'">
+                    <h2>SSR机场</h2>
+                    <p>本人自用四年桃花源机场稳定不跑路</p>
+                    <a href="https://cloud.ssthy.us/auth/register?code=BkAa" target="_blank">使用</a>
+                </div>
+                <div class="tool-item" onclick="location.href='#todo-list'">
+                    <h2>CURSOR</h2>
+                    <p>人工智能开发工具，你描述CURSOR写代码，本站所有内容均用该工具开发。</p>
+                    <a href="https://www.cursor.com/" target="_blank">使用</a>
+                </div>
+                <div class="tool-item">
+                    <h2>PixPin</h2>
+                    <p>截图工具</p>
+                    <a href="https://pixpin.cn/" target="_blank">使用</a>
+                </div>
+                <div class="tool-item" onclick="location.href='#weather'">
+                    <h2>Potplayer</h2>
+                    <p>超好用的视频播放器</p>
+                    <a href="https://potplayer.daum.net/"  target="_blank">使用</a>
+                </div>
+                <div class="tool-item" onclick="location.href='#unit-converter'">
+                    <h2>uTools</h2>
+                    <p>新一代效率工具平台</p>
+                    <a href="https://www.u.tools/" target="_blank">使用</a>
+                </div>
+                <div class="tool-item" onclick="location.href='#timer'">
+                    <h2>TrafficMonitor</h2>
+                    <p>这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。</p>
+                    <a href="https://github.com/zhongyang219/TrafficMonitor" target="_blank">使用</a>
+                </div>
+                <div class="tool-item" onclick="location.href='#note-pad'">
+                    <h2>Watt Toolkit</h2>
+                    <p>Steam免费加速工具</p>
+                    <a href="https://steampp.net/" target="_blank">使用</a>
+                </div>
+                <div class="tool-item" onclick="location.href='#note-pad'">
+                    <h2>FxSound</h2>
+                    <p>电脑音响音量放大软件</p>
+                    <a href="https://www.fxsound.com/" target="_blank">使用</a>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Bigbabol的个人博客</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const toolItems = document.querySelectorAll('.tool-item');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                toolItems.forEach(item => {
+                    const toolName = item.querySelector('h2').textContent.toLowerCase();
+                    const toolDescription = item.querySelector('p').textContent.toLowerCase();
+                    if (toolName.includes(searchTerm) || toolDescription.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
