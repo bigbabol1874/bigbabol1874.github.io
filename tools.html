@@ -19,30 +19,26 @@
             text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .tool-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: #e0e0e0;
         }
         .tool-item h2 {
             margin-top: 0;
             color: #333;
+            margin-bottom: 10px;
         }
         .tool-item p {
             color: #666;
-            margin-bottom: 15px;
-        }
-        .tool-item a {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        .tool-item a:hover {
-            background-color: #2980b9;
+            margin-bottom: 0;
         }
         .game-button {
             color: black !important;
@@ -79,46 +75,38 @@
         <main>
             <h1>常用工具</h1>
             <div class="tools-grid">
-                <div class="tool-item" onclick="location.href='#todo-list'">
+                <a href="https://cloud.ssthy.us/auth/register?code=BkAa" target="_blank" class="tool-item">
                     <h2>SSR机场</h2>
                     <p>本人自用四年桃花源机场稳定不跑路</p>
-                    <a href="https://cloud.ssthy.us/auth/register?code=BkAa" target="_blank">使用</a>
-                </div>
-                <div class="tool-item" onclick="location.href='#todo-list'">
+                </a>
+                <a href="https://www.cursor.com/" target="_blank" class="tool-item">
                     <h2>CURSOR</h2>
                     <p>人工智能开发工具，你描述CURSOR写代码，本站所有内容均用该工具开发。</p>
-                    <a href="https://www.cursor.com/" target="_blank">使用</a>
-                </div>
-                <div class="tool-item">
+                </a>
+                <a href="https://pixpin.cn/" target="_blank" class="tool-item">
                     <h2>PixPin</h2>
                     <p>截图工具</p>
-                    <a href="https://pixpin.cn/" target="_blank">使用</a>
-                </div>
-                <div class="tool-item" onclick="location.href='#weather'">
+                </a>
+                <a href="https://potplayer.daum.net/" target="_blank" class="tool-item">
                     <h2>Potplayer</h2>
                     <p>超好用的视频播放器</p>
-                    <a href="https://potplayer.daum.net/"  target="_blank">使用</a>
-                </div>
-                <div class="tool-item" onclick="location.href='#unit-converter'">
+                </a>
+                <a href="https://www.u.tools/" target="_blank" class="tool-item">
                     <h2>uTools</h2>
                     <p>新一代效率工具平台</p>
-                    <a href="https://www.u.tools/" target="_blank">使用</a>
-                </div>
-                <div class="tool-item" onclick="location.href='#timer'">
+                </a>
+                <a href="https://github.com/zhongyang219/TrafficMonitor" target="_blank" class="tool-item">
                     <h2>TrafficMonitor</h2>
                     <p>这是一个用于显示当前网速、CPU及内存利用率的桌面悬浮窗软件，并支持任务栏显示，支持更换皮肤。</p>
-                    <a href="https://github.com/zhongyang219/TrafficMonitor" target="_blank">使用</a>
-                </div>
-                <div class="tool-item" onclick="location.href='#note-pad'">
+                </a>
+                <a href="https://steampp.net/" target="_blank" class="tool-item">
                     <h2>Watt Toolkit</h2>
                     <p>Steam免费加速工具</p>
-                    <a href="https://steampp.net/" target="_blank">使用</a>
-                </div>
-                <div class="tool-item" onclick="location.href='#note-pad'">
+                </a>
+                <a href="https://www.fxsound.com/" target="_blank" class="tool-item">
                     <h2>FxSound</h2>
                     <p>电脑音响音量放大软件</p>
-                    <a href="https://www.fxsound.com/" target="_blank">使用</a>
-                </div>
+                </a>
             </div>
         </main>
         <footer>
