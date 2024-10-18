@@ -28,20 +28,6 @@
             color: red;
             font-weight: bold;
         }
-        .audio-player {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            width: 400px; /* 增加宽度 */
-        }
-        .audio-player audio {
-            width: 100%; /* 使音频播放器填满容器 */
-        }
     </style>
 </head>
 <body>
@@ -74,37 +60,7 @@
         </footer>
     </div>
 
-    <div class="audio-player">
-        <audio id="background-music" controls loop>
-            <source src="backgroundmusic/tdll.mp3" type="audio/mpeg">
-            您的浏览器不支持 audio 元素。
-        </audio>
-    </div>
-
     <script src="script.js"></script>
     <script src="visitor-counter.js"></script>
-    <script>
-        var music = document.getElementById("background-music");
-
-        // 尝试自动播放
-        window.addEventListener('load', function() {
-            music.play().then(function() {
-                console.log("音乐开始播放");
-            }).catch(function(error) {
-                console.log("自动播放失败:", error);
-            });
-        });
-
-        // 监听页面可见性变化
-        document.addEventListener("visibilitychange", function() {
-            if (document.hidden) {
-                music.pause();
-            } else {
-                music.play().catch(function(error) {
-                    console.log("恢复播放失败:", error);
-                });
-            }
-        });
-    </script>
 </body>
 </html>
