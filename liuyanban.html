@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>摸鱼 - Bigbabol的个人博客</title>
+    <title>留言板 - Bigbabol的个人博客</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .moyu-grid {
+        .message-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
         }
-        .moyu-item {
+        .message-item {
             border-radius: 10px;
             padding: 20px;
             text-align: center;
@@ -25,16 +25,16 @@
             justify-content: center;
             align-items: center;
         }
-        .moyu-item:hover {
+        .message-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .moyu-item h2 {
+        .message-item h2 {
             margin-top: 0;
             color: #333;
             margin-bottom: 10px;
         }
-        .moyu-item p {
+        .message-item p {
             color: #666;
             margin-bottom: 0;
         }
@@ -59,34 +59,22 @@
                     <li><a href="index.html">首页</a></li>
                     <li><a href="tools.html">工具</a></li>
                     <li><a href="games.html">游戏</a></li>
-                    <li><a href="moyu.html" class="active">摸鱼</a></li>
-                    <li><a href="liuyanban.html">留言板</a></li>
+                    <li><a href="moyu.html">摸鱼</a></li>
+                    <li><a href="liuyanban.html" class="active">留言板</a></li>
                 </ul>
             </nav>
         </header>
         <div class="search-container">
-            <input type="text" id="search-input" placeholder="搜索摸鱼内容...">
+            <input type="text" id="search-input" placeholder="搜索留言...">
         </div>
         <main>
-            <h1>摸鱼专区</h1>
-            <div class="moyu-grid">
-                <a href="https://www.yikm.net/" target="_blank" class="moyu-item">
-                    <h2>小霸王</h2>
-                    <p>愿我们找回童年的快乐</p>
+            <h1>留言板</h1>
+            <div class="message-grid">
+                <a href="https://www.bilibili.com/video/BV1CtyuYDEeH/?share_source=copy_web&vd_source=e5055ed1c2a3e16edd3f1718ea08d15b" target="_blank" class="message-item">
+                    <h2>bilibili</h2>
+                    <p>评论区留言代找全网资源</p>
                 </a>
-                <a href="https://fish.leixf.cn/" target="_blank" class="moyu-item">
-                    <h2>电子木鱼</h2>
-                    <p>敲电子木鱼,积赛博功德。</p>
-                </a>
-                <a href="https://arthub.ai/" target="_blank" class="moyu-item">
-                    <h2>ArtHub</h2>
-                    <p>AI绘画社区（不要用来GHS）</p>
-                </a>
-                <a href="https://civitai.com/" target="_blank" class="moyu-item">
-                    <h2>Civitai</h2>
-                    <p>AI绘画社区（不要用来GHS）</p>
-                </a>
-                <!-- 可以添加更多摸鱼项目 -->
+                <!-- 可以添加更多留言项目 -->
             </div>
         </main>
         <footer>
@@ -96,7 +84,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('search-input');
-            const moyuItems = document.querySelectorAll('.moyu-item');
+            const messageItems = document.querySelectorAll('.message-item');
 
             // 生成随机颜色的函数
             function getRandomColor() {
@@ -104,17 +92,17 @@
                 return `hsl(${hue}, 70%, 80%)`;
             }
 
-            // 为每个摸鱼项分配随机背景颜色
-            moyuItems.forEach(item => {
+            // 为每个留言项分配随机背景颜色
+            messageItems.forEach(item => {
                 item.style.backgroundColor = getRandomColor();
             });
 
             searchInput.addEventListener('input', function() {
                 const searchTerm = this.value.toLowerCase();
-                moyuItems.forEach(item => {
-                    const moyuName = item.querySelector('h2').textContent.toLowerCase();
-                    const moyuDescription = item.querySelector('p').textContent.toLowerCase();
-                    if (moyuName.includes(searchTerm) || moyuDescription.includes(searchTerm)) {
+                messageItems.forEach(item => {
+                    const messageName = item.querySelector('h2').textContent.toLowerCase();
+                    const messageContent = item.querySelector('p').textContent.toLowerCase();
+                    if (messageName.includes(searchTerm) || messageContent.includes(searchTerm)) {
                         item.style.display = '';
                     } else {
                         item.style.display = 'none';
