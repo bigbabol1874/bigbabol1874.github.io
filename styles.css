@@ -1,12 +1,15 @@
-body, html {
-    font-family: 'Microsoft YaHei', Arial, sans-serif;
-    line-height: 1.6;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    height: 100%;
-    background-color: #3498db;
-    color: #333;
-    overflow: hidden;
+    overflow-y: auto;
+}
+
+body {
+    background-image: url('backgroundimg/backgroundimg.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 .container {
@@ -89,6 +92,7 @@ footer {
     padding: 15px 0;
     width: 100%;
     flex-shrink: 0;
+    margin-top: auto;
 }
 
 .full-height {
@@ -209,4 +213,60 @@ footer {
 
 .game-item:hover {
     color: #333 !important;
+}
+
+.search-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#search-input {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-item {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.grid-item h2 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.grid-item p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.highlight {
+    font-size: 1.2em;
+    color: red;
+    font-weight: bold;
 }

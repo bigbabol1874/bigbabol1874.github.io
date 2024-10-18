@@ -5,79 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bigbabol的游戏世界</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-y: auto;
-        }
-        body {
-            background-image: url('backgroundimg/backgroundimg.png');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        .container {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            /* 移除 background-color: rgba(255, 255, 255, 0.8); */
-        }
-        main {
-            flex: 1;
-        }
-        footer {
-            margin-top: auto;
-        }
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            /* 移除 max-height 和 overflow-y */
-        }
-        .game-item {
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .game-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .game-info {
-            text-align: center;
-        }
-        .game-item h2 {
-            margin-top: 0;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .game-item p {
-            color: #666;
-            margin-bottom: 0;
-        }
-        .search-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        #search-input {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -97,20 +24,20 @@
         </div>
         <main>
             <h1>游戏列表</h1>
-            <div class="games-grid">
-                <a href="https://steamzg.com/" target="_blank" class="game-item">
+            <div class="grid games-grid">
+                <a href="https://steamzg.com/" target="_blank" class="grid-item">
                     <div class="game-info">
                         <h2>小叽资源</h2>
                         <p>各种免费单机游戏</p>
                     </div>
                 </a>
-                <a href="https://www.steamtools.net/" target="_blank" class="game-item">
+                <a href="https://www.steamtools.net/" target="_blank" class="grid-item">
                     <div class="game-info">
                         <h2>SteamTools（丝踢木吐丝）</h2>
                         <p>Steam免费入库工具</p>
                     </div>
                 </a>
-                <a href="https://caigames.cn/" target="_blank" class="game-item">
+                <a href="https://caigames.cn/" target="_blank" class="grid-item">
                     <div class="game-info">
                         <h2>菜玩社区</h2>
                         <p>各种免费单机游戏</p>
@@ -123,36 +50,6 @@
             <p>Bigbabol的个人博客</p>
         </footer>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('search-input');
-            const gameItems = document.querySelectorAll('.game-item');
-
-            // 生成随机颜色的函数
-            function getRandomColor() {
-                const hue = Math.floor(Math.random() * 360);
-                return `hsl(${hue}, 70%, 80%)`;
-            }
-
-            // 为每个游戏项分配随机背景颜色
-            gameItems.forEach(item => {
-                item.style.backgroundColor = getRandomColor();
-            });
-
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                gameItems.forEach(item => {
-                    const gameName = item.querySelector('h2').textContent.toLowerCase();
-                    const gameDescription = item.querySelector('p').textContent.toLowerCase();
-                    if (gameName.includes(searchTerm) || gameDescription.includes(searchTerm)) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="common.js"></script>
 </body>
 </html>

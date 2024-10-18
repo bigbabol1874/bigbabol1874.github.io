@@ -5,76 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>留言板 - Bigbabol的个人博客</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow-y: auto;
-        }
-        body {
-            background-image: url('backgroundimg/backgroundimg.png');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
-        }
-        .container {
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            /* 移除 background-color: rgba(255, 255, 255, 0.8); */
-        }
-        main {
-            flex: 1;
-        }
-        footer {
-            margin-top: auto;
-        }
-        .message-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            /* 移除 max-height 和 overflow-y */
-        }
-        .message-item {
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .message-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .message-item h2 {
-            margin-top: 0;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .message-item p {
-            color: #666;
-            margin-bottom: 0;
-        }
-        .search-container {
-            text-align: center;
-            margin: 20px 0;
-        }
-        #search-input {
-            width: 300px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
@@ -94,8 +24,8 @@
         </div>
         <main>
             <h1>留言板</h1>
-            <div class="message-grid">
-                <a href="https://www.bilibili.com/video/BV1CtyuYDEeH/?share_source=copy_web&vd_source=e5055ed1c2a3e16edd3f1718ea08d15b" target="_blank" class="message-item">
+            <div class="grid message-grid">
+                <a href="https://www.bilibili.com/video/BV1CtyuYDEeH/?share_source=copy_web&vd_source=e5055ed1c2a3e16edd3f1718ea08d15b" target="_blank" class="grid-item">
                     <h2>bilibili</h2>
                     <p>评论区留言代找全网资源</p>
                 </a>
@@ -106,35 +36,6 @@
             <p>Bigbabol的个人博客</p>
         </footer>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('search-input');
-            const messageItems = document.querySelectorAll('.message-item');
-
-            // 生成随机颜色的函数
-            function getRandomColor() {
-                const hue = Math.floor(Math.random() * 360);
-                return `hsl(${hue}, 70%, 80%)`;
-            }
-
-            // 为每个留言项分配随机背景颜色
-            messageItems.forEach(item => {
-                item.style.backgroundColor = getRandomColor();
-            });
-
-            searchInput.addEventListener('input', function() {
-                const searchTerm = this.value.toLowerCase();
-                messageItems.forEach(item => {
-                    const messageName = item.querySelector('h2').textContent.toLowerCase();
-                    const messageContent = item.querySelector('p').textContent.toLowerCase();
-                    if (messageName.includes(searchTerm) || messageContent.includes(searchTerm)) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="common.js"></script>
 </body>
 </html>
