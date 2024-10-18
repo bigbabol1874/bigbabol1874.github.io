@@ -11,6 +11,8 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
+            max-height: 100%;
+            overflow-y: auto;
         }
         .message-item {
             border-radius: 10px;
@@ -48,6 +50,10 @@
             font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
+        }
+        main {
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
         }
     </style>
 </head>
