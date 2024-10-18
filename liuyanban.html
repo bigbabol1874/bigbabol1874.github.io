@@ -6,13 +6,29 @@
     <title>留言板 - Bigbabol的个人博客</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto; /* 添加垂直滚动条 */
+        }
+        .container {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            margin-top: auto;
+        }
         .message-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
             padding: 20px;
-            max-height: 100%;
-            overflow-y: auto;
+            /* 移除 max-height 和 overflow-y */
         }
         .message-item {
             border-radius: 10px;
@@ -50,10 +66,6 @@
             font-size: 16px;
             border: 1px solid #ddd;
             border-radius: 5px;
-        }
-        main {
-            max-height: calc(100vh - 200px);
-            overflow-y: auto;
         }
     </style>
 </head>

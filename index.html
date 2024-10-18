@@ -6,6 +6,23 @@
     <title>Bigbabol</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-y: auto; /* 添加垂直滚动条 */
+        }
+        .container {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            margin-top: auto;
+        }
         .highlight {
             font-size: 1.2em;
             color: red;
